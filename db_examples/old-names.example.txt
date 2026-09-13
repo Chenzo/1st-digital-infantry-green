@@ -1,0 +1,14 @@
+Guessed output of old-names.php.
+
+The live file's actual content (see old-names.php) is just a commented-out
+session-based login redirect stub — it doesn't print a member list itself
+in the copy we have. Given the filename and its sibling names.php, this was
+almost certainly an earlier version of the member roster renderer, in the
+same query-string shape:
+
+memberName1=...&memberTitle1=...&memberName2=...&memberTitle2=...&...&totalNumberOfMembers=N
+
+Best guess: a smaller/older roster than the 18-member list in names.php,
+likely missing later recruits like BIG-TOOL, FR33BRID, MKULTRA, GOTCHA_I52
+(the highest member numbers in names.php, suggesting they were the most
+recently added at the time it was generated).

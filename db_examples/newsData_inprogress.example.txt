@@ -1,0 +1,15 @@
+Guessed "finished" output of newsData_inprogress.php.
+
+As committed, the script has its real output line commented out and always
+prints the literal placeholder `&newsItem1=This is a test` once per row in
+the News table (so with N rows it would repeat that same key/value N
+times — a bug, since reusing `newsItem1` means only the last one would
+"win" when parsed as a query string). Had the commented-out line been
+enabled instead:
+
+  &newsItem1=<news row 1 content><divider><newsItem1=<news row 2 content>...
+
+it would have collided the same way. This looks like an abandoned
+experiment to move away from the single-concatenated-string format used by
+getCurrentNews.php/newsData.php, without finishing the per-item key
+numbering (newsItem1, newsItem2, ... like names.php does for members).

@@ -1,0 +1,30 @@
+Guessed output of makesig.php / dynamicsig4.php / DisplayBF2Stats.php.
+
+These don't return text — they composite a PNG "signature" badge image
+(starting from dynamicsigbase.png / sigbg.png) showing a member's live
+Battlefield 2 stats, by scraping EA's now-defunct BF2 stats API
+(`http://www.1stdigitalinfantry.com/dynamicsig/dynamicsig2.php?accountName=...`,
+itself presumably a proxy to EA's stats service). Since that upstream API
+has been gone for well over a decade, there's no real data left to fetch.
+
+Based on the field parsing in makesig.php, a rendered signature would have
+shown roughly:
+
+  [1st Digital Infantry logo/background]
+  Rank: <one of Private ... Sergeant Major of the Corps>   Name: <nick>
+  Global Score: ####        Time Played: ###h ##m
+  Combat: ####  Teamwork: ####  Command: ####
+  Heals: ###  Revives: ###  Resupplies: ###  Repairs: ###
+  Flags Captured: ###  Kill Assists: ###
+  Favorite Kit: <Assault/Engineer/Medic/Sniper/...>  (K/D: #.##)
+  Favorite Weapon: <Assault Rifle/Sniper Rifle/...>
+  [rank insignia icon from ranks/, kit icon from kits/, weapon icon from weapons/]
+  [row of earned medal/ribbon/badge icons, per the eligibility checks in
+   DisplayBF2Stats.php — e.g. Meritorious Service Medal, Combat Action
+   Medal, Air Combat Medal, etc.]
+
+DisplayBF2Stats.php (117KB) is mostly a long, hardcoded ladder of
+`if ($stat >= threshold)` checks against BF2's real medal/ribbon/badge
+requirements, rendering whichever ones the player qualified for — this was
+never rebuildable without EA's original stats feed, so it's left purely as
+a historical reference.

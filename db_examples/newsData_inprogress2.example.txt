@@ -1,0 +1,14 @@
+Guessed output of newsData_inprogress2.php.
+
+This one is closer to a working implementation than _inprogress.php: it
+prints "newsItem1=" once, then for each News row echoes the raw
+`News_Data` field (not urldecoded, unlike getCurrentNews.php) followed by
+the `<img src='images/line.jpg'>` divider. Guessed output, using the real
+historical entries as stand-ins for the DB rows:
+
+newsItem1=<font face='smallFont' size='8' color='#CCCCCC'><font color='#00FF00'>01.09.07</font> - THE 1ST DIGITAL INFANTRY IS CURRENTLY RECRUITING...</font><p align='center'><br><br><img src='images/line.jpg' width='250' height='1' align='center'><br></p><font face='smallFont' size='8' color='#DDDDDD'><font color='#00CC00'>01.05.06</font> - WELL, FINALLY, AFTER A COUPLE OF WEEKS OF WORK...</font><p align='center'><br><br><img src='images/line.jpg' width='250' height='1' align='center'><br></p>...
+
+Since News_Data isn't urldecoded here, if the DB stored it URL-encoded
+(likely, given every other endpoint urldecodes it) this version would have
+shipped broken — literal `%20`/`%27` etc. in the output instead of spaces
+and quotes. That may be exactly why it was abandoned as "_inprogress".

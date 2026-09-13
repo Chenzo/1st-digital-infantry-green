@@ -1,0 +1,16 @@
+Guessed output of getCurrentNews.php (news.swf's live data feed), based on
+its code (SELECT * FROM News ORDER BY News_Date DESC, urldecoded + a
+divider image between entries) and the real historical entries preserved in
+newsData.php / "Copy of newsData.php":
+
+newsItem1=<font face='smallFont' size='8' color='#CCCCCC'><font color='#00FF00'>01.09.07</font> - THE 1ST DIGITAL INFANTRY IS CURRENTLY RECRUITING NEW MEMBERS FOR BATTLEFIELD 2142. IT'S BEEN A WHILE SINCE THE <1>'S BEEN IN A WAR AND WE'RE GEARING UP TO GET BACK IN THE ACTION AT TEAM WARFARE.</font> <p align='center'><br><br><img src='images/line.jpg' width='250' height='1' align='center'><br></p><font face='smallFont' size='8' color='#DDDDDD'><font color='#00CC00'>01.05.06</font> - WELL, FINALLY, AFTER A COUPLE OF WEEKS OF WORK, I'VE REMADE OUR WEBSITE. YOU'RE LOOKING AT VERSION 3.0. ...</font>
+</font>
+
+Each row from the News table becomes one block of this shape:
+  <font ...><font color='#00FF00'>MM.DD.YY</font> - TEXT...</font>
+joined by the divider <img src='images/line.jpg'> between entries, closed
+with a trailing </font>. The most recent post (01.09.07, the 2142
+recruiting drive) is very likely what was actually live at the end of the
+site's life, with the 01.05.06/12.19.05/12.21.05 entries preserved below it
+as older history — matching what's in newsData.php and "Copy of
+newsData.php".
