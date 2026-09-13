@@ -1,0 +1,10 @@
+{
+  "name": "1di-green",
+  "private": true,
+  "scripts": {
+    "start": "http-server docs -p 4173 -c-1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
