@@ -4,6 +4,8 @@
 
 #### Circa 2004
 
+https://chenzo.github.io/1st-digital-infantry-green/
+
 A restoration of the original Flash-based 1st Digital Infantry site,
 running on [Ruffle](https://ruffle.rs/) instead of the long-dead Adobe
 Flash Player. Source recovered from a CD/DVD backup.
